@@ -15,8 +15,6 @@ require "action_cable/engine"
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module SlowfoodApi
@@ -33,6 +31,17 @@ module SlowfoodApi
           expose: %w(access-token expiry token-type uid client),
           max_age: 0
       end
+    end
+
+    config.generators do |generate|
+      generate.test_framework :rspec
+      generate.helper false
+      generate.assets false
+      generate.view_specs false
+      generate.helper_specs false
+      generate.routing_specs false
+      generate.controller_specs false
+      generate.request_specs false
     end
   end
 end
