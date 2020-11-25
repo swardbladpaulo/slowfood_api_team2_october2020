@@ -7,7 +7,7 @@ RSpec.describe Api::ProductsController, type: :request do
       get '/api/products'
     end
 
-    it 'shoud return a 200 response' do
+    it 'should return a 200 response' do
       expect(response).to have_http_status 200
     end
 
