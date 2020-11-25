@@ -2,7 +2,7 @@
 
 RSpec.describe Api::ProductsController, type: :request do
   let!(:products) { 2.times { create(:product) } }
-  describe 'GET /product' do
+  describe 'GET /api/products' do
     before do
       get '/api/products'
     end
