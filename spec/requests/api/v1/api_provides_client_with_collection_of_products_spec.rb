@@ -7,11 +7,11 @@ RSpec.describe Api::ProductsController, type: :request do
       get '/api/products'
     end
 
-    it 'should return a 200 response' do
+    it 'is expected to return a 200 response' do
       expect(response).to have_http_status 200
     end
 
-    it 'should return two products' do
+    it 'is expected to return two products' do
       expect(JSON.parse(response.body)['products'].count).to eq 2
     end
   end
