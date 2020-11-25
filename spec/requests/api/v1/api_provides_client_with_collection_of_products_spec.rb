@@ -12,7 +12,7 @@ RSpec.describe Api::ProductsController, type: :request do
     end
 
     it 'is expected to return two products' do
-      expect(JSON.parse(response.body)['products'].count).to eq 2
+      expect(response_json['products'].count).to eq 2
     end
   end
 end
