@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
-    namespace :v0 do
-      resources :pings, only: [:index], constraints: { format: 'json' }
-    end
+    get 'products/index'
+  end
+  namespace :api do
+    resources :products, only: [:index]
   end
 end
