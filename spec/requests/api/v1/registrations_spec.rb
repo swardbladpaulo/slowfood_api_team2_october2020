@@ -1,9 +1,9 @@
-RSpec.describe 'POST "/api/v1/auth" ', type: :request do
+RSpec.describe 'POST "/api/auth" ', type: :request do
   let(:headers) { { HTTP_ACCPT: 'application/json' } }
 
   describe 'with valid credentials' do
     before do
-      post '/api/v1/auth',
+      post '/api/auth',
         params: {
           email: 'user@mail.com',
           password: 'password',
@@ -24,7 +24,7 @@ RSpec.describe 'POST "/api/v1/auth" ', type: :request do
   context 'when a user submits' do
     describe 'a non-matching password confirmation' do
       before do
-        post '/api/v1/auth',
+        post '/api/auth',
           params: {
             email: 'user@mail.com',
             password: 'password',
@@ -44,7 +44,7 @@ RSpec.describe 'POST "/api/v1/auth" ', type: :request do
 
     describe 'an invalid email address' do
       before do
-        post '/api/v1/auth',
+        post '/api/auth',
           params: {
             email: 'user@mail.',
             password: 'password',
@@ -66,7 +66,7 @@ RSpec.describe 'POST "/api/v1/auth" ', type: :request do
       let!(:registered_user) { create(:user, email: 'coach@mail.com' ) }
 
       before do
-        post '/api/v1/auth',
+        post '/api/auth',
           params: {
             email: 'coach@mail.com',
             password: 'password',
