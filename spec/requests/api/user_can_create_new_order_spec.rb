@@ -5,13 +5,13 @@ RSpec.describe Api::OrdersController, type: :request do
   let!(:authorization_headers) { registered_user.create_new_auth_token }
 
   before do
-    post 'api/orders', 
+    post '/api/orders', 
       params: { product_id: product_1.id },
       headers: authorization_headers
   end
 
   it {
-    expect(response).to have_http_status 201
+    expect(response).to have_http_status 200
   }
 
   it 'is expected to respond with a success message' do
