@@ -1,8 +1,6 @@
 RSpec.describe Api::OrdersController, type: :request do
   let!(:product_1) { create(:product, name: 'Swedish Meatballs', price: 10) }
   let!(:product_2) { create(:product, name: 'Reindeer Tartate', price: 15) }
-  # let(:order) { create(:order, :user) }
-  # let(:registered_user) { create(:user) }
   let(:order) { create(:order) }
 
   before do
