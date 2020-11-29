@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :order do
-    user
+    user = :user
   end
 end
