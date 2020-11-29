@@ -1,5 +1,5 @@
 class Api::OrdersController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   def create
     order = Order.create
     order.order_items.create(product_id: params[:product_id])
